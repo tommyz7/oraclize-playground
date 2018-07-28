@@ -7,7 +7,7 @@ body {
 
 label {
   display: inline-block;
-  width: 100px;
+  width: 37px;
 }
 
 input {
@@ -95,6 +95,10 @@ a{
   transition-timing-function: ease-in-out;
 }
 
+.row {
+  margin: 20px;
+}
+
 .yellow{
   display: flex;
   flex: 1;
@@ -131,6 +135,21 @@ a{
 
 .dark h3{
   color: #ffc305;
+}
+
+#eth {
+  width: 66px;
+  background: #ffc305;
+  border: 1px solid #000;
+  height: 8px;
+}
+
+button {
+  background: #000;
+  border: 1px solid #ffc305;
+  height: 21px;
+  color: #fff;
+  padding: 0px 5px;
 }
 
 @keyframes heartbeat

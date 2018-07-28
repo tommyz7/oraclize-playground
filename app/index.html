@@ -12,7 +12,13 @@
   <div id="container">
     <h1 id="title">Oraclize</h1>
     <h2> ÐApp</h2>
-
+    <h4>Contract Address: <span id="address"></span></h4>
+    <div class="row">
+      <input id="eth" type="number" placeholder="0.25"><label for="eth">ETH</label><button onclick="App.refuel()" id="refuel">Re-fuel</button>
+    </div>
+    <div class="row">
+      <button onclick="App.update()" id="update">Update</button>
+    </div>
     <div id="row">
       <div class="yellow">
         <h3>ÐAPP BALANCE</h3>

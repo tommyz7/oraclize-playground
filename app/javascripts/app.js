@@ -98,6 +98,8 @@ window.App = {
 
     OraclizeContract.deployed().then(function(instance) {
       meta = instance;
+      var address_element = document.getElementById("address");
+      address_element.innerHTML = instance.address;
 
       App.addEventListeners(instance);
 
@@ -128,6 +130,29 @@ window.App = {
 
     var total_element = document.getElementById("total");
     total_element.innerHTML = (price * balance).toFixed(2);
+  },
+
+  refuel: function() {
+    OraclizeContract.deployed().then(function(instance) {
+      var value = document.getElementById("eth").value;
+      web3.eth.sendTransaction(
+      {
+        to:instance.address, 
+        from:account, 
+        value:web3.toWei(value, "ether")
+      },
+        function (err, res) {
+          console.log(res);
+        }
+      );
+    });
+  },
+  update: function() {
+    OraclizeContract.deployed().then(function(instance) {
+      return instance.update({
+        from:account
+      });
+    }).then(function(res){console.log(res)});
   }
 };
 
