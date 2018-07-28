@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <script src="./app.js"></script>
-</head>
-<body>
-  <h1>MetaCoin</h1>
-  <h2>Example Truffle Dapp</h2>
-  <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
+  <title>Basic Truffle Webpack Oraclize ÐAPP w/ Frontend & Coinbase API communication.</title>
 
-  <br>
-  <h1>Send MetaCoin</h1>
-  <br><label for="amount">Amount:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
-  <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
-  <br><br><button id="send" onclick="App.sendCoin()">Send MetaCoin</button>
-  <br><br>
-  <span id="status"></span>
-  <br>
-  <span class="hint"><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>
+  <script src="./app.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <h1 id="title">Oraclize</h1>
+    <h2> ÐApp</h2>
+
+    <div id="row">
+      <div class="yellow">
+        <h3>ÐAPP BALANCE</h3>
+
+        <span><h1 id="balance">0.000000</h1> ETH</span>
+      </div>
+
+      <div class="dark">
+        <h3>USD VALUE</h3>
+        <span><h1 id="total">0.00</h1> USD</span>
+      </div>
+    </div>
+
+    <span id="status"></span>
+
+    <br />
+
+    <div class="hint">
+      <div><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</div>
+      <div><strong>ETH/USD</strong> rates from <a href="https://api.coinbase.com/v2/prices/ETH-USD/spot">Coinbase</a>.</div>
+
+      <div><strong>Made by:</strong> <a href="https://twitter.com/WWWillems">WWWillems</a></div>
+    </div>
+  </div>
 </body>
 </html>
