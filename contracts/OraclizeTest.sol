@@ -10,7 +10,7 @@ contract OraclizeTest is usingOraclize {
     string public ETHUSD;
 
     event LogInfo(string description);
-    event LogPriceUpdate(string price);
+    event LogPriceUpdate(string price, uint balance);
     event LogUpdate(address indexed _owner, uint indexed _balance);
 
     // Constructor
@@ -30,7 +30,7 @@ contract OraclizeTest is usingOraclize {
         require(msg.sender == oraclize_cbAddress());
 
         ETHUSD = result;
-        emit LogPriceUpdate(ETHUSD);
+        emit LogPriceUpdate(ETHUSD, this.balance);
         update();
     }
 
@@ -49,5 +49,7 @@ contract OraclizeTest is usingOraclize {
             oraclize_query("URL", "json(https://api.coinbase.com/v2/prices/ETH-USD/spot).data.amount");
         }
     }
+
+    function() public payable {}
 
 }

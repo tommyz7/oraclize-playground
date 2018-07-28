@@ -62,6 +62,7 @@ window.App = {
     LogPriceUpdate.watch(function(err, result){
       if(!err){
         App.ethPriceinUSD = result.args.price;
+        App.currentBalance = web3.fromWei(result.args.balance, 'ether');
         App.showBalance(App.ethPriceinUSD, App.currentBalance);
       }else{
         console.log(err)
